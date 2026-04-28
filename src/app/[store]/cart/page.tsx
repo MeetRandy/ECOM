@@ -39,7 +39,7 @@ export default function CartPage() {
   if (!mounted) return null;
 
   return (
-    <main style={{ background: "#FAFAF8", minHeight: "60vh" }}>
+    <main style={{ background: "var(--sf-bg)", minHeight: "60vh" }}>
       <div style={{ padding: "32px" }}>
         {/* Heading */}
         <div
@@ -55,7 +55,7 @@ export default function CartPage() {
               fontFamily: "var(--font-display, var(--font-sans))",
               fontSize: 28,
               fontWeight: 800,
-              color: "#1A1A1A",
+              color: "var(--sf-ink)",
               margin: 0,
             }}
           >
@@ -66,7 +66,7 @@ export default function CartPage() {
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: 14,
-                color: "#7A7468",
+                color: "var(--sf-subtle)",
               }}
             >
               ({lineCount} {lineCount === 1 ? "item" : "items"})
@@ -86,19 +86,19 @@ export default function CartPage() {
               textAlign: "center",
             }}
           >
-            <ShoppingCart size={48} color="#E8E8E4" strokeWidth={1.5} />
+            <ShoppingCart size={48} strokeWidth={1.5} style={{ color: "var(--sf-line)" }} />
             <div
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: "#1A1A1A",
+                color: "var(--sf-ink)",
                 marginTop: 16,
                 marginBottom: 8,
               }}
             >
               Your cart&apos;s empty
             </div>
-            <p style={{ fontSize: 14, color: "#7A7468", marginBottom: 24 }}>
+            <p style={{ fontSize: 14, color: "var(--sf-subtle)", marginBottom: 24 }}>
               Looks like you haven&apos;t added anything yet.
             </p>
             <Link
@@ -108,7 +108,7 @@ export default function CartPage() {
                 alignItems: "center",
                 height: 44,
                 padding: "0 22px",
-                background: "#E85D04",
+                background: "var(--sf-accent)",
                 color: "#FFFFFF",
                 borderRadius: 8,
                 fontSize: 14,
@@ -130,14 +130,14 @@ export default function CartPage() {
           >
             {/* Line items */}
             <div>
-              {cart.lines.map((line, i) => (
+              {cart.lines.map((line) => (
                 <div
                   key={line.variantId}
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: 16,
-                    borderBottom: "1px solid #E8E8E4",
+                    borderBottom: "1px solid var(--sf-line)",
                     paddingBottom: 16,
                     marginBottom: 16,
                     minHeight: 96,
@@ -150,7 +150,7 @@ export default function CartPage() {
                       height: 80,
                       borderRadius: 6,
                       overflow: "hidden",
-                      background: "#F5F4F0",
+                      background: "var(--sf-shelf)",
                       flexShrink: 0,
                       display: "flex",
                       alignItems: "center",
@@ -170,7 +170,7 @@ export default function CartPage() {
                         }}
                       />
                     ) : (
-                      <span style={{ fontSize: 28, color: "#C8C5BE" }}>□</span>
+                      <span style={{ fontSize: 28, color: "var(--sf-placeholder)" }}>□</span>
                     )}
                   </div>
 
@@ -180,14 +180,14 @@ export default function CartPage() {
                       style={{
                         fontSize: 13,
                         fontWeight: 500,
-                        color: "#1A1A1A",
+                        color: "var(--sf-ink)",
                         marginBottom: 2,
                       }}
                     >
                       {line.productName}
                     </div>
                     {line.variantName && line.variantName !== "Default" && (
-                      <div style={{ fontSize: 12, color: "#7A7468" }}>
+                      <div style={{ fontSize: 12, color: "var(--sf-subtle)" }}>
                         {line.variantName}
                       </div>
                     )}
@@ -210,16 +210,16 @@ export default function CartPage() {
                       style={{
                         width: 28,
                         height: 28,
-                        border: "1px solid #E8E8E4",
+                        border: "1px solid var(--sf-line)",
                         borderRight: "none",
                         borderRadius: "4px 0 0 4px",
-                        background: "#FFFFFF",
+                        background: "var(--sf-surface)",
                         cursor: "pointer",
                         fontSize: 14,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#5A554B",
+                        color: "var(--sf-muted)",
                       }}
                     >
                       −
@@ -228,14 +228,14 @@ export default function CartPage() {
                       style={{
                         width: 36,
                         height: 28,
-                        border: "1px solid #E8E8E4",
+                        border: "1px solid var(--sf-line)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         fontFamily: "var(--font-mono)",
                         fontSize: 13,
                         fontWeight: 600,
-                        color: "#1A1A1A",
+                        color: "var(--sf-ink)",
                       }}
                     >
                       {line.quantity}
@@ -248,16 +248,16 @@ export default function CartPage() {
                       style={{
                         width: 28,
                         height: 28,
-                        border: "1px solid #E8E8E4",
+                        border: "1px solid var(--sf-line)",
                         borderLeft: "none",
                         borderRadius: "0 4px 4px 0",
-                        background: "#FFFFFF",
+                        background: "var(--sf-surface)",
                         cursor: "pointer",
                         fontSize: 14,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#5A554B",
+                        color: "var(--sf-muted)",
                       }}
                     >
                       +
@@ -270,7 +270,7 @@ export default function CartPage() {
                       fontFamily: "var(--font-mono)",
                       fontSize: 14,
                       fontWeight: 700,
-                      color: "#1A1A1A",
+                      color: "var(--sf-ink)",
                       flexShrink: 0,
                       minWidth: 80,
                       textAlign: "right",
@@ -287,7 +287,7 @@ export default function CartPage() {
                       background: "none",
                       border: "none",
                       cursor: "pointer",
-                      color: "#7A7468",
+                      color: "var(--sf-subtle)",
                       padding: 4,
                       display: "flex",
                       alignItems: "center",
@@ -305,8 +305,8 @@ export default function CartPage() {
             {/* Order summary */}
             <div
               style={{
-                background: "#FFFFFF",
-                border: "1px solid #E8E8E4",
+                background: "var(--sf-surface)",
+                border: "1px solid var(--sf-line)",
                 borderRadius: 8,
                 padding: 24,
                 position: "sticky",
@@ -317,7 +317,7 @@ export default function CartPage() {
                 style={{
                   fontSize: 13,
                   fontWeight: 600,
-                  color: "#1A1A1A",
+                  color: "var(--sf-ink)",
                   marginBottom: 16,
                 }}
               >
@@ -333,12 +333,12 @@ export default function CartPage() {
                     fontSize: 13,
                   }}
                 >
-                  <span style={{ color: "#5A554B" }}>Subtotal (incl. VAT)</span>
+                  <span style={{ color: "var(--sf-muted)" }}>Subtotal (incl. VAT)</span>
                   <span
                     style={{
                       fontFamily: "var(--font-mono)",
                       fontWeight: 500,
-                      color: "#1A1A1A",
+                      color: "var(--sf-ink)",
                     }}
                   >
                     {formatZAR(subtotal)}
@@ -353,11 +353,11 @@ export default function CartPage() {
                     fontSize: 12,
                   }}
                 >
-                  <span style={{ color: "#7A7468" }}>VAT (15%)</span>
+                  <span style={{ color: "var(--sf-subtle)" }}>VAT (15%)</span>
                   <span
                     style={{
                       fontFamily: "var(--font-mono)",
-                      color: "#7A7468",
+                      color: "var(--sf-subtle)",
                     }}
                   >
                     {formatZAR(vat)}
@@ -365,7 +365,7 @@ export default function CartPage() {
                 </div>
 
                 {/* Divider */}
-                <div style={{ borderTop: "1px solid #E8E8E4", margin: "4px 0" }} />
+                <div style={{ borderTop: "1px solid var(--sf-line)", margin: "4px 0" }} />
 
                 {/* Total */}
                 <div
@@ -376,11 +376,11 @@ export default function CartPage() {
                     fontWeight: 700,
                   }}
                 >
-                  <span style={{ color: "#1A1A1A" }}>Total</span>
+                  <span style={{ color: "var(--sf-ink)" }}>Total</span>
                   <span
                     style={{
                       fontFamily: "var(--font-mono)",
-                      color: "#1A1A1A",
+                      color: "var(--sf-ink)",
                     }}
                   >
                     {formatZAR(total)}
@@ -396,7 +396,7 @@ export default function CartPage() {
                   width: "100%",
                   marginTop: 20,
                   height: 48,
-                  background: "#E85D04",
+                  background: "var(--sf-accent)",
                   color: "#FFFFFF",
                   borderRadius: 8,
                   fontSize: 14,
@@ -425,7 +425,7 @@ export default function CartPage() {
                 ].map((line) => (
                   <div
                     key={line}
-                    style={{ fontSize: 12, color: "#5A554B" }}
+                    style={{ fontSize: 12, color: "var(--sf-muted)" }}
                   >
                     {line}
                   </div>

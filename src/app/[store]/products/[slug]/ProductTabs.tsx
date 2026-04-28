@@ -18,22 +18,22 @@ export function ProductTabs({ description, specs }: Props) {
     border: "none",
     background: "none",
     borderBottom: "2px solid transparent",
-    color: "#1A1A1A",
+    color: "var(--sf-ink)",
     transition: "color 0.1s, border-color 0.1s",
   };
 
   const tabActive: React.CSSProperties = {
     ...tabBase,
-    color: "#1A1A1A",
-    borderBottom: "2px solid #E85D04",
+    color: "var(--sf-ink)",
+    borderBottom: "2px solid var(--sf-accent)",
     fontWeight: 600,
   };
 
   return (
     <div
       style={{
-        background: "#FFFFFF",
-        border: "1px solid #E8E8E4",
+        background: "var(--sf-surface)",
+        border: "1px solid var(--sf-line)",
         borderRadius: 10,
         overflow: "hidden",
       }}
@@ -42,7 +42,7 @@ export function ProductTabs({ description, specs }: Props) {
       <div
         style={{
           display: "flex",
-          borderBottom: "1px solid #E8E8E4",
+          borderBottom: "1px solid var(--sf-line)",
         }}
       >
         <button
@@ -67,7 +67,7 @@ export function ProductTabs({ description, specs }: Props) {
           <div
             style={{
               fontSize: 14,
-              color: "#3A352D",
+              color: "var(--sf-ink-2)",
               lineHeight: 1.7,
               whiteSpace: "pre-wrap",
             }}
@@ -80,14 +80,14 @@ export function ProductTabs({ description, specs }: Props) {
               {specs.map((s) => (
                 <tr
                   key={s.key}
-                  style={{ borderBottom: "1px solid #F5F4F0" }}
+                  style={{ borderBottom: "1px solid var(--sf-shelf)" }}
                 >
                   <td
                     style={{
                       padding: "10px 0",
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#5A554B",
+                      color: "var(--sf-muted)",
                       width: "40%",
                     }}
                   >
@@ -97,7 +97,7 @@ export function ProductTabs({ description, specs }: Props) {
                     style={{
                       padding: "10px 0",
                       fontSize: 13,
-                      color: "#1A1A1A",
+                      color: "var(--sf-ink)",
                     }}
                   >
                     {s.value}

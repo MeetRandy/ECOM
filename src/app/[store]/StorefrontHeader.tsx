@@ -49,8 +49,8 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
   return (
     <header
       style={{
-        background: "#1A1A1A",
-        color: "#FAFAF8",
+        background: "var(--sf-header-bg)",
+        color: "var(--sf-header-fg)",
         padding: "10px 32px",
         display: "grid",
         gridTemplateColumns: "auto 1fr auto",
@@ -76,7 +76,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
           style={{
             width: 30,
             height: 30,
-            background: "#E85D04",
+            background: "var(--sf-accent)",
             borderRadius: 6,
             display: "flex",
             alignItems: "center",
@@ -84,7 +84,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
             fontFamily: "var(--font-display, var(--font-sans))",
             fontWeight: 900,
             fontSize: 16,
-            color: "#1A1A1A",
+            color: "var(--sf-header-bg)",
             flexShrink: 0,
           }}
         >
@@ -95,7 +95,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
             fontFamily: "var(--font-display, var(--font-sans))",
             fontWeight: 800,
             fontSize: 16,
-            color: "#FAFAF8",
+            color: "var(--sf-header-fg)",
             whiteSpace: "nowrap",
           }}
         >
@@ -106,7 +106,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
             fontFamily: "var(--font-display, var(--font-sans))",
             fontWeight: 800,
             fontSize: 16,
-            color: "#E85D04",
+            color: "var(--sf-accent)",
           }}
         >
           {" "}Resale
@@ -129,10 +129,10 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
           onChange={(e) => setSelectedCategory(e.target.value)}
           style={{
             height: 44,
-            background: "#2A2A2A",
-            color: "#FAFAF8",
+            background: "var(--sf-header-input-bg)",
+            color: "var(--sf-header-fg)",
             border: "none",
-            borderRight: "1px solid #3A3A3A",
+            borderRight: "1px solid var(--sf-header-input-sep)",
             borderRadius: "8px 0 0 8px",
             fontSize: 13,
             padding: "0 12px",
@@ -161,8 +161,8 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
           style={{
             flex: 1,
             height: 44,
-            background: "#2A2A2A",
-            color: "#FAFAF8",
+            background: "var(--sf-header-input-bg)",
+            color: "var(--sf-header-fg)",
             border: "none",
             padding: "0 16px",
             fontSize: 13.5,
@@ -174,7 +174,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
           type="submit"
           style={{
             height: 44,
-            background: "#E85D04",
+            background: "var(--sf-accent)",
             color: "#FFFFFF",
             border: "none",
             borderRadius: "0 8px 8px 0",
@@ -209,7 +209,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
             alignItems: "center",
             gap: 4,
             fontSize: 13,
-            color: "rgba(250,250,248,0.7)",
+            color: "color-mix(in srgb, var(--sf-header-fg) 70%, transparent)",
           }}
         >
           <MapPin size={14} />
@@ -224,7 +224,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
             alignItems: "center",
             gap: 5,
             fontSize: 13,
-            color: "#FAFAF8",
+            color: "var(--sf-header-fg)",
             background: "none",
             border: "none",
             cursor: "pointer",
@@ -242,7 +242,7 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
             display: "inline-flex",
             alignItems: "center",
             gap: 7,
-            background: "#E85D04",
+            background: "var(--sf-accent)",
             color: "#FFFFFF",
             padding: "8px 14px",
             borderRadius: 6,
@@ -275,8 +275,8 @@ export function StorefrontHeader({ tenantSlug, categories }: Props) {
                 position: "absolute",
                 top: -6,
                 right: -6,
-                background: "#1A1A1A",
-                color: "#FAFAF8",
+                background: "var(--sf-header-bg)",
+                color: "var(--sf-header-fg)",
                 borderRadius: 999,
                 fontSize: 9,
                 fontWeight: 800,

@@ -68,7 +68,7 @@ export default async function ProductDetailPage({
   }
 
   return (
-    <main style={{ background: "#FAFAF8", minHeight: "60vh" }}>
+    <main style={{ background: "var(--sf-bg)", minHeight: "60vh" }}>
       <div
         style={{
           maxWidth: 1100,
@@ -87,7 +87,7 @@ export default async function ProductDetailPage({
             style={{
               borderRadius: 8,
               overflow: "hidden",
-              background: "#F5F4F0",
+              background: "var(--sf-shelf)",
               aspectRatio: "1/1",
               display: "flex",
               alignItems: "center",
@@ -107,7 +107,7 @@ export default async function ProductDetailPage({
               <div
                 style={{
                   fontSize: 80,
-                  color: "#C8C5BE",
+                  color: "var(--sf-placeholder)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -132,8 +132,8 @@ export default async function ProductDetailPage({
                   height: 60,
                   borderRadius: 6,
                   overflow: "hidden",
-                  border: i === 0 ? "2px solid #E85D04" : "1px solid #E8E8E4",
-                  background: "#F5F4F0",
+                  border: i === 0 ? "2px solid var(--sf-accent)" : "1px solid var(--sf-line)",
+                  background: "var(--sf-shelf)",
                   flexShrink: 0,
                 }}
               >
@@ -156,7 +156,7 @@ export default async function ProductDetailPage({
             <div
               style={{
                 fontSize: 11,
-                color: "#7A7468",
+                color: "var(--sf-subtle)",
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
               }}
@@ -173,7 +173,7 @@ export default async function ProductDetailPage({
               fontWeight: 800,
               letterSpacing: "-0.015em",
               margin: "0",
-              color: "#1A1A1A",
+              color: "var(--sf-ink)",
               lineHeight: 1.2,
             }}
           >
@@ -188,15 +188,15 @@ export default async function ProductDetailPage({
                   fontFamily: "var(--font-mono)",
                   fontSize: 28,
                   fontWeight: 700,
-                  color: "#1A1A1A",
+                  color: "var(--sf-ink)",
                 }}
               >
                 {formatZAR(defaultPrice)}
               </span>
               <span
                 style={{
-                  background: "#FFE4CC",
-                  color: "#E85D04",
+                  background: "var(--sf-accent-soft)",
+                  color: "var(--sf-accent)",
                   fontSize: 11,
                   fontWeight: 700,
                   textTransform: "uppercase",
@@ -214,13 +214,13 @@ export default async function ProductDetailPage({
           {(() => {
             const totalStock = variantRows.reduce((s, v) => s + v.stockQty, 0);
             return totalStock > 0 ? (
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#5A8E4A" }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#5A8E4A", display: "inline-block" }} />
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "var(--sf-success)" }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--sf-success)", display: "inline-block" }} />
                 In stock
               </div>
             ) : (
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#B0492A" }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#B0492A", display: "inline-block" }} />
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "var(--sf-muted)" }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--sf-muted)", display: "inline-block" }} />
                 Sold out
               </div>
             );
@@ -231,7 +231,7 @@ export default async function ProductDetailPage({
             <p
               style={{
                 fontSize: 14,
-                color: "#3A352D",
+                color: "var(--sf-ink-2)",
                 lineHeight: 1.6,
                 marginTop: 0,
                 marginBottom: 0,
@@ -246,7 +246,7 @@ export default async function ProductDetailPage({
           )}
 
           {/* Divider */}
-          <div style={{ borderTop: "1px solid #E8E8E4" }} />
+          <div style={{ borderTop: "1px solid var(--sf-line)" }} />
 
           {/* Add to cart */}
           {variantRows.reduce((s, v) => s + v.stockQty, 0) > 0 ? (
@@ -268,7 +268,7 @@ export default async function ProductDetailPage({
               }))}
             />
           ) : (
-            <button disabled style={{ width: "100%", padding: "14px", background: "#E8E8E4", color: "#9A958E", border: "none", borderRadius: 6, fontSize: 14, fontWeight: 600, cursor: "not-allowed" }}>
+            <button disabled style={{ width: "100%", padding: "14px", background: "var(--sf-line)", color: "var(--sf-subtle)", border: "none", borderRadius: 6, fontSize: 14, fontWeight: 600, cursor: "not-allowed" }}>
               Sold Out
             </button>
           )}
@@ -289,7 +289,7 @@ export default async function ProductDetailPage({
             ].map((line) => (
               <div
                 key={line}
-                style={{ fontSize: 12, color: "#5A554B" }}
+                style={{ fontSize: 12, color: "var(--sf-muted)" }}
               >
                 {line}
               </div>

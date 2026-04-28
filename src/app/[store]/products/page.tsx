@@ -84,7 +84,7 @@ export default async function ProductCataloguePage({
   const sidebarLinkBase: React.CSSProperties = {
     display: "block",
     fontSize: 13,
-    color: "#5A554B",
+    color: "var(--sf-muted)",
     textDecoration: "none",
     padding: "6px 0 6px 12px",
     paddingLeft: 12,
@@ -93,14 +93,14 @@ export default async function ProductCataloguePage({
 
   const sidebarLinkActive: React.CSSProperties = {
     ...sidebarLinkBase,
-    color: "#1A1A1A",
+    color: "var(--sf-ink)",
     fontWeight: 600,
-    borderLeft: "2px solid #E85D04",
+    borderLeft: "2px solid var(--sf-accent)",
     paddingLeft: 10,
   };
 
   return (
-    <main style={{ background: "#FAFAF8" }}>
+    <main style={{ background: "var(--sf-bg)" }}>
       <div
         style={{
           display: "grid",
@@ -116,7 +116,7 @@ export default async function ProductCataloguePage({
             style={{
               fontSize: 13,
               fontWeight: 700,
-              color: "#1A1A1A",
+              color: "var(--sf-ink)",
               marginBottom: 12,
             }}
           >
@@ -164,7 +164,7 @@ export default async function ProductCataloguePage({
                   fontSize: 22,
                   fontWeight: 800,
                   margin: 0,
-                  color: "#1A1A1A",
+                  color: "var(--sf-ink)",
                 }}
               >
                 {activeCategory ? activeCategory.name : "All products"}
@@ -173,7 +173,7 @@ export default async function ProductCataloguePage({
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 13,
-                  color: "#7A7468",
+                  color: "var(--sf-subtle)",
                 }}
               >
                 · {productRows.length} results
@@ -190,11 +190,11 @@ export default async function ProductCataloguePage({
                 style={{
                   height: 36,
                   padding: "0 12px",
-                  border: "1px solid #E8E8E4",
+                  border: "1px solid var(--sf-line)",
                   borderRadius: 6,
-                  background: "#FFFFFF",
+                  background: "var(--sf-surface)",
                   fontSize: 13,
-                  color: "#1A1A1A",
+                  color: "var(--sf-ink)",
                   outline: "none",
                   width: 200,
                 }}
@@ -207,7 +207,7 @@ export default async function ProductCataloguePage({
               style={{
                 textAlign: "center",
                 padding: "60px 24px",
-                background: "#F5F4F0",
+                background: "var(--sf-shelf)",
                 borderRadius: 10,
               }}
             >
@@ -215,7 +215,7 @@ export default async function ProductCataloguePage({
                 style={{
                   fontSize: 15,
                   fontWeight: 600,
-                  color: "#5A554B",
+                  color: "var(--sf-muted)",
                   marginBottom: 12,
                 }}
               >
@@ -225,7 +225,7 @@ export default async function ProductCataloguePage({
                 href={`/${slug}/products`}
                 style={{
                   fontSize: 13,
-                  color: "#E85D04",
+                  color: "var(--sf-accent)",
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
@@ -251,8 +251,8 @@ export default async function ProductCataloguePage({
                     key={p.id}
                     className="vv-card-hover"
                     style={{
-                      background: "#FFFFFF",
-                      border: "1px solid #ECEAE3",
+                      background: "var(--sf-surface)",
+                      border: "1px solid var(--sf-line)",
                       borderRadius: 10,
                       overflow: "hidden",
                       display: "flex",
@@ -264,7 +264,7 @@ export default async function ProductCataloguePage({
                     <div
                       style={{
                         aspectRatio: "1/1",
-                        background: "#F5F4F0",
+                        background: "var(--sf-shelf)",
                         position: "relative",
                         overflow: "hidden",
                       }}
@@ -289,7 +289,7 @@ export default async function ProductCataloguePage({
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            color: "#C8C5BE",
+                            color: "var(--sf-placeholder)",
                             fontSize: 40,
                           }}
                         >
@@ -306,11 +306,11 @@ export default async function ProductCataloguePage({
                           height: 30,
                           padding: "0 12px",
                           borderRadius: 999,
-                          background: "#FAFAF8",
-                          border: "1px solid #E8E8E4",
+                          background: "var(--sf-bg)",
+                          border: "1px solid var(--sf-line)",
                           fontSize: 11.5,
                           fontWeight: 600,
-                          color: "#1A1A1A",
+                          color: "var(--sf-ink)",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: 4,
@@ -321,7 +321,7 @@ export default async function ProductCataloguePage({
                         Add{" "}
                         <span
                           style={{
-                            color: "#E85D04",
+                            color: "var(--sf-accent)",
                             fontFamily: "var(--font-mono)",
                             fontWeight: 700,
                           }}
@@ -348,7 +348,7 @@ export default async function ProductCataloguePage({
                             fontSize: 13.5,
                             lineHeight: 1.35,
                             fontWeight: 500,
-                            color: "#1A1A1A",
+                            color: "var(--sf-ink)",
                             display: "-webkit-box",
                             WebkitLineClamp: 2,
                             WebkitBoxOrient: "vertical",
@@ -370,7 +370,7 @@ export default async function ProductCataloguePage({
                               fontFamily: "var(--font-mono)",
                               fontSize: 15,
                               fontWeight: 700,
-                              color: "#1A1A1A",
+                              color: "var(--sf-ink)",
                             }}
                           >
                             {price !== null ? formatZAR(price) : "—"}
@@ -381,7 +381,7 @@ export default async function ProductCataloguePage({
                               alignItems: "center",
                               gap: 4,
                               fontSize: 11,
-                              color: "#5A8E4A",
+                              color: "var(--sf-success)",
                             }}
                           >
                             <span
@@ -389,7 +389,7 @@ export default async function ProductCataloguePage({
                                 width: 6,
                                 height: 6,
                                 borderRadius: "50%",
-                                background: "#5A8E4A",
+                                background: "var(--sf-success)",
                                 display: "inline-block",
                               }}
                             />

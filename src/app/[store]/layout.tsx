@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { StorefrontHeader } from "./StorefrontHeader";
 import { StorefrontSubNav } from "./StorefrontSubNav";
 import { StorefrontFooter } from "./StorefrontFooter";
+import { getTheme } from "@/lib/themes";
 
 export default async function StorefrontLayout({
   children,
@@ -38,6 +39,7 @@ export default async function StorefrontLayout({
     .orderBy(categories.displayOrder);
 
   const storeName = settings?.storeName ?? tenant.name;
+  const theme = getTheme(settings?.theme);
 
   return (
     <div
@@ -45,8 +47,8 @@ export default async function StorefrontLayout({
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-        background: "#FAFAF8",
-      }}
+        ...theme.vars,
+      } as React.CSSProperties}
     >
       <StorefrontHeader
         tenantSlug={slug}

@@ -26,14 +26,14 @@ function SubNavInner({ tenantSlug, categories }: Props) {
     textDecoration: "none",
     display: "inline-block",
     borderBottom: "2px solid transparent",
-    color: "#1A1A1A",
+    color: "var(--sf-ink)",
     whiteSpace: "nowrap",
   };
 
   const activeTab: React.CSSProperties = {
     ...tabBase,
-    color: "#E85D04",
-    borderBottom: "2px solid #E85D04",
+    color: "var(--sf-accent)",
+    borderBottom: "2px solid var(--sf-accent)",
   };
 
   const allActive = isProductsBase && !categoryParam;
@@ -41,8 +41,8 @@ function SubNavInner({ tenantSlug, categories }: Props) {
   return (
     <nav
       style={{
-        background: "#FFFFFF",
-        borderBottom: "1px solid #E8E8E4",
+        background: "var(--sf-surface)",
+        borderBottom: "1px solid var(--sf-line)",
         padding: "0 32px",
         display: "flex",
         gap: 0,
@@ -68,7 +68,7 @@ function SubNavInner({ tenantSlug, categories }: Props) {
           </Link>
         );
       })}
-      <span style={{ ...tabBase, color: "#1A1A1A" }}>Sell to us</span>
+      <span style={{ ...tabBase, color: "var(--sf-ink)" }}>Sell to us</span>
     </nav>
   );
 }
@@ -79,8 +79,8 @@ export function StorefrontSubNav(props: Props) {
       fallback={
         <nav
           style={{
-            background: "#FFFFFF",
-            borderBottom: "1px solid #E8E8E4",
+            background: "var(--sf-surface)",
+            borderBottom: "1px solid var(--sf-line)",
             padding: "0 32px",
             height: 46,
           }}

@@ -20,13 +20,13 @@ export function StorefrontFooter({
   const labelStyle: React.CSSProperties = {
     fontSize: 13,
     fontWeight: 600,
-    color: "#1A1A1A",
+    color: "var(--sf-ink)",
     marginBottom: 10,
   };
 
   const lineStyle: React.CSSProperties = {
     fontSize: 13,
-    color: "#5A554B",
+    color: "var(--sf-muted)",
     lineHeight: 1.6,
   };
 
@@ -39,9 +39,9 @@ export function StorefrontFooter({
           gridTemplateColumns: "1.4fr 1fr 1fr 1fr",
           gap: 32,
           fontSize: 13,
-          color: "#5A554B",
-          borderTop: "1px solid #E8E8E4",
-          background: "#FFFFFF",
+          color: "var(--sf-muted)",
+          borderTop: "1px solid var(--sf-line)",
+          background: "var(--sf-surface)",
         }}
       >
         {/* Col 1 — Brand */}
@@ -51,7 +51,7 @@ export function StorefrontFooter({
               style={{
                 width: 30,
                 height: 30,
-                background: "#E85D04",
+                background: "var(--sf-accent)",
                 borderRadius: 6,
                 display: "flex",
                 alignItems: "center",
@@ -59,7 +59,7 @@ export function StorefrontFooter({
                 fontFamily: "var(--font-display, var(--font-sans))",
                 fontWeight: 900,
                 fontSize: 16,
-                color: "#1A1A1A",
+                color: "#FFFFFF",
                 flexShrink: 0,
               }}
             >
@@ -70,7 +70,7 @@ export function StorefrontFooter({
                 fontFamily: "var(--font-display, var(--font-sans))",
                 fontWeight: 800,
                 fontSize: 16,
-                color: "#1A1A1A",
+                color: "var(--sf-ink)",
               }}
             >
               {storeName}
@@ -79,7 +79,7 @@ export function StorefrontFooter({
           <p
             style={{
               fontSize: 13,
-              color: "#5A554B",
+              color: "var(--sf-muted)",
               maxWidth: 300,
               lineHeight: 1.55,
               margin: 0,
@@ -122,7 +122,7 @@ export function StorefrontFooter({
       {/* Bottom strip */}
       <div
         style={{
-          background: "#FFFFFF",
+          background: "var(--sf-surface)",
           padding: "0 32px 24px",
         }}
       >
@@ -130,16 +130,16 @@ export function StorefrontFooter({
           style={{
             paddingTop: 16,
             marginTop: 0,
-            borderTop: "1px solid #E8E8E4",
+            borderTop: "1px solid var(--sf-line)",
             fontSize: 11.5,
-            color: "#7A7468",
+            color: "var(--sf-subtle)",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
           <span>All prices include 15% VAT · ZAR</span>
-          <span>© 2026 Vorna Valley Resale</span>
+          <span>© 2026 {storeName}</span>
         </div>
       </div>
     </footer>

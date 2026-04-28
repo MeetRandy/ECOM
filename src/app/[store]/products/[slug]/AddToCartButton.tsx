@@ -59,7 +59,7 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
             style={{
               fontSize: 12,
               fontWeight: 600,
-              color: "#5A554B",
+              color: "var(--sf-muted)",
               textTransform: "uppercase",
               letterSpacing: "0.06em",
               marginBottom: 8,
@@ -79,10 +79,10 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
                     padding: "6px 14px",
                     borderRadius: 6,
                     border: isActive
-                      ? "2px solid #E85D04"
-                      : "1px solid #E8E8E4",
-                    background: isActive ? "#FFE4CC" : "#FFFFFF",
-                    color: isActive ? "#E85D04" : "#1A1A1A",
+                      ? "2px solid var(--sf-accent)"
+                      : "1px solid var(--sf-line)",
+                    background: isActive ? "var(--sf-accent-soft)" : "var(--sf-surface)",
+                    color: isActive ? "var(--sf-accent)" : "var(--sf-ink)",
                     fontSize: 13,
                     fontWeight: isActive ? 600 : 400,
                     cursor: "pointer",
@@ -113,7 +113,7 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
           style={{
             fontSize: 12,
             fontWeight: 600,
-            color: "#5A554B",
+            color: "var(--sf-muted)",
             textTransform: "uppercase",
             letterSpacing: "0.06em",
             marginBottom: 8,
@@ -128,16 +128,16 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
             style={{
               width: 36,
               height: 36,
-              border: "1px solid #E8E8E4",
+              border: "1px solid var(--sf-line)",
               borderRight: "none",
               borderRadius: "6px 0 0 6px",
-              background: "#FFFFFF",
+              background: "var(--sf-surface)",
               fontSize: 18,
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#5A554B",
+              color: "var(--sf-muted)",
             }}
           >
             −
@@ -146,14 +146,14 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
             style={{
               width: 52,
               height: 36,
-              border: "1px solid #E8E8E4",
+              border: "1px solid var(--sf-line)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontFamily: "var(--font-mono)",
               fontWeight: 600,
               fontSize: 14,
-              color: "#1A1A1A",
+              color: "var(--sf-ink)",
             }}
           >
             {qty}
@@ -164,16 +164,16 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
             style={{
               width: 36,
               height: 36,
-              border: "1px solid #E8E8E4",
+              border: "1px solid var(--sf-line)",
               borderLeft: "none",
               borderRadius: "0 6px 6px 0",
-              background: "#FFFFFF",
+              background: "var(--sf-surface)",
               fontSize: 18,
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#5A554B",
+              color: "var(--sf-muted)",
             }}
           >
             +
@@ -189,7 +189,7 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
         style={{
           width: "100%",
           height: 52,
-          background: added ? "#5A8E4A" : outOfStock ? "#C8C5BE" : "#E85D04",
+          background: added ? "var(--sf-success)" : outOfStock ? "var(--sf-line)" : "var(--sf-accent)",
           color: "#FFFFFF",
           border: "none",
           borderRadius: 8,
@@ -219,11 +219,11 @@ export function AddToCartButton({ tenantSlug, product, variants }: Props) {
           width: "100%",
           height: 48,
           background: "transparent",
-          border: "1px solid #1A1A1A",
+          border: "1px solid var(--sf-ink)",
           borderRadius: 8,
           fontSize: 14,
           fontWeight: 600,
-          color: "#1A1A1A",
+          color: "var(--sf-ink)",
           cursor: "pointer",
         }}
       >

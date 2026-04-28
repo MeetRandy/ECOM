@@ -103,7 +103,7 @@ export default async function StorefrontHomePage({
     name.charAt(0).toUpperCase();
 
   return (
-    <main style={{ background: "#FAFAF8" }}>
+    <main style={{ background: "var(--sf-bg)" }}>
       {/* Hero section */}
       <section
         style={{
@@ -119,8 +119,8 @@ export default async function StorefrontHomePage({
             borderRadius: 12,
             padding: "56px 56px 48px",
             background:
-              "linear-gradient(110deg,#FFE4CC 0%, #FAFAF8 60%, #FFD9B8 100%)",
-            border: "1px solid #F2E5D2",
+              "linear-gradient(110deg, var(--sf-accent-soft) 0%, var(--sf-bg) 60%, var(--sf-accent-deep) 100%)",
+            border: "1px solid var(--sf-hero-border)",
             minHeight: 380,
             position: "relative",
             overflow: "hidden",
@@ -134,7 +134,7 @@ export default async function StorefrontHomePage({
               display: "inline-flex",
               alignItems: "center",
               gap: 6,
-              background: "#FFFFFF",
+              background: "var(--sf-surface)",
               padding: "6px 12px",
               borderRadius: 999,
               fontSize: 11,
@@ -142,6 +142,7 @@ export default async function StorefrontHomePage({
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               alignSelf: "flex-start",
+              color: "var(--sf-ink)",
             }}
           >
             <span
@@ -149,7 +150,7 @@ export default async function StorefrontHomePage({
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: "#5A8E4A",
+                background: "var(--sf-success)",
                 display: "inline-block",
               }}
             />
@@ -165,7 +166,7 @@ export default async function StorefrontHomePage({
               letterSpacing: "-0.025em",
               margin: "18px 0 0",
               maxWidth: 560,
-              color: "#1A1A1A",
+              color: "var(--sf-ink)",
             }}
           >
             Find your next favourite thing.
@@ -174,7 +175,7 @@ export default async function StorefrontHomePage({
           <p
             style={{
               fontSize: 15,
-              color: "#3A352D",
+              color: "var(--sf-ink-2)",
               margin: "18px 0 0",
               maxWidth: 480,
               lineHeight: 1.55,
@@ -201,7 +202,7 @@ export default async function StorefrontHomePage({
                 gap: 6,
                 height: 48,
                 padding: "0 22px",
-                background: "#E85D04",
+                background: "var(--sf-accent)",
                 color: "#FFFFFF",
                 borderRadius: 8,
                 fontSize: 14,
@@ -218,11 +219,11 @@ export default async function StorefrontHomePage({
                 height: 48,
                 padding: "0 22px",
                 background: "transparent",
-                border: "1px solid #1A1A1A",
+                border: "1px solid var(--sf-ink)",
                 borderRadius: 8,
                 fontSize: 14,
                 fontWeight: 600,
-                color: "#1A1A1A",
+                color: "var(--sf-ink)",
                 cursor: "pointer",
               }}
             >
@@ -244,8 +245,8 @@ export default async function StorefrontHomePage({
             style={{
               borderRadius: 12,
               padding: 24,
-              background: "#1A1A1A",
-              color: "#FAFAF8",
+              background: "var(--sf-header-bg)",
+              color: "var(--sf-header-fg)",
               position: "relative",
               overflow: "hidden",
               display: "flex",
@@ -262,7 +263,7 @@ export default async function StorefrontHomePage({
                 width: 200,
                 height: 200,
                 borderRadius: "50%",
-                background: "rgba(232,93,4,0.18)",
+                background: "var(--sf-accent-glow)",
                 filter: "blur(8px)",
                 pointerEvents: "none",
               }}
@@ -271,7 +272,7 @@ export default async function StorefrontHomePage({
               <div
                 style={{
                   fontSize: 11,
-                  color: "#E85D04",
+                  color: "var(--sf-accent)",
                   fontWeight: 700,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
@@ -287,7 +288,7 @@ export default async function StorefrontHomePage({
                   fontSize: 22,
                   maxWidth: 240,
                   lineHeight: 1.25,
-                  color: "#FAFAF8",
+                  color: "var(--sf-header-fg)",
                 }}
               >
                 {topDeal ? topDeal.name : storeName + " Deals"}
@@ -299,7 +300,7 @@ export default async function StorefrontHomePage({
                   style={{
                     fontFamily: "var(--font-mono)",
                     fontSize: 13,
-                    color: "rgba(250,250,248,0.5)",
+                    color: "color-mix(in srgb, var(--sf-header-fg) 50%, transparent)",
                     textDecoration: "line-through",
                     marginBottom: 4,
                   }}
@@ -312,7 +313,7 @@ export default async function StorefrontHomePage({
                   fontFamily: "var(--font-mono)",
                   fontSize: 28,
                   fontWeight: 700,
-                  color: "#E85D04",
+                  color: "var(--sf-accent)",
                 }}
               >
                 {topDealPrice > 0 ? formatZAR(topDealPrice) : "—"}
@@ -325,8 +326,8 @@ export default async function StorefrontHomePage({
             style={{
               borderRadius: 12,
               padding: 24,
-              background: "#FFFFFF",
-              border: "1px solid #E8E8E4",
+              background: "var(--sf-surface)",
+              border: "1px solid var(--sf-line)",
               display: "flex",
               flexDirection: "column",
               gap: 12,
@@ -338,12 +339,12 @@ export default async function StorefrontHomePage({
                 style={{
                   width: 36,
                   height: 36,
-                  background: "#FFE4CC",
+                  background: "var(--sf-accent-soft)",
                   borderRadius: 8,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "#E85D04",
+                  color: "var(--sf-accent)",
                   flexShrink: 0,
                 }}
               >
@@ -354,7 +355,7 @@ export default async function StorefrontHomePage({
                   fontFamily: "var(--font-display, var(--font-sans))",
                   fontWeight: 700,
                   fontSize: 16,
-                  color: "#1A1A1A",
+                  color: "var(--sf-ink)",
                 }}
               >
                 How it works
@@ -379,10 +380,10 @@ export default async function StorefrontHomePage({
               ].map((text, i) => (
                 <li
                   key={i}
-                  style={{ fontSize: 13, color: "#3A352D", display: "flex", gap: 6 }}
+                  style={{ fontSize: 13, color: "var(--sf-ink-2)", display: "flex", gap: 6 }}
                 >
                   <span
-                    style={{ color: "#E85D04", fontWeight: 700, flexShrink: 0 }}
+                    style={{ color: "var(--sf-accent)", fontWeight: 700, flexShrink: 0 }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -411,8 +412,8 @@ export default async function StorefrontHomePage({
                   key={c.id}
                   href={`/${slug}/products?category=${c.slug}`}
                   style={{
-                    background: "#FFFFFF",
-                    border: active ? "1px solid #E85D04" : "1px solid #E8E8E4",
+                    background: "var(--sf-surface)",
+                    border: active ? "1px solid var(--sf-accent)" : "1px solid var(--sf-line)",
                     borderRadius: 10,
                     padding: "16px 14px",
                     textAlign: "left",
@@ -429,14 +430,14 @@ export default async function StorefrontHomePage({
                       width: 32,
                       height: 32,
                       borderRadius: 8,
-                      background: active ? "#E85D04" : "#F5F4F0",
+                      background: active ? "var(--sf-accent)" : "var(--sf-shelf)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       fontFamily: "var(--font-display, var(--font-sans))",
                       fontWeight: 700,
                       fontSize: 14,
-                      color: active ? "#FFFFFF" : "#5A554B",
+                      color: active ? "#FFFFFF" : "var(--sf-muted)",
                     }}
                   >
                     {letterMark(c.name)}
@@ -445,7 +446,7 @@ export default async function StorefrontHomePage({
                     style={{
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#1A1A1A",
+                      color: "var(--sf-ink)",
                       lineHeight: 1.3,
                     }}
                   >
@@ -455,7 +456,7 @@ export default async function StorefrontHomePage({
                     style={{
                       fontFamily: "var(--font-mono)",
                       fontSize: 11,
-                      color: "#7A7468",
+                      color: "var(--sf-subtle)",
                     }}
                   >
                     {catCounts.get(c.id) ?? 0} items
@@ -486,12 +487,12 @@ export default async function StorefrontHomePage({
               fontWeight: 800,
               letterSpacing: "-0.015em",
               margin: 0,
-              color: "#1A1A1A",
+              color: "var(--sf-ink)",
             }}
           >
             Just arrived
           </h2>
-          <span style={{ fontSize: 13, color: "#7A7468" }}>
+          <span style={{ fontSize: 13, color: "var(--sf-subtle)" }}>
             Freshest stock from the floor
           </span>
         </div>
@@ -500,12 +501,12 @@ export default async function StorefrontHomePage({
           style={{
             fontSize: 13,
             fontWeight: 600,
-            color: "#1A1A1A",
+            color: "var(--sf-ink)",
             textDecoration: "none",
             display: "inline-flex",
             alignItems: "center",
             gap: 6,
-            borderBottom: "1px solid #1A1A1A",
+            borderBottom: "1px solid var(--sf-ink)",
             paddingBottom: 2,
           }}
         >
@@ -532,8 +533,8 @@ export default async function StorefrontHomePage({
                 key={p.id}
                 className="vv-card-hover"
                 style={{
-                  background: "#FFFFFF",
-                  border: "1px solid #ECEAE3",
+                  background: "var(--sf-surface)",
+                  border: "1px solid var(--sf-line)",
                   borderRadius: 10,
                   overflow: "hidden",
                   display: "flex",
@@ -545,7 +546,7 @@ export default async function StorefrontHomePage({
                 <div
                   style={{
                     aspectRatio: "1/1",
-                    background: "#F5F4F0",
+                    background: "var(--sf-shelf)",
                     position: "relative",
                     overflow: "hidden",
                   }}
@@ -570,7 +571,7 @@ export default async function StorefrontHomePage({
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#C8C5BE",
+                        color: "var(--sf-placeholder)",
                         fontSize: 48,
                       }}
                     >
@@ -587,11 +588,11 @@ export default async function StorefrontHomePage({
                       height: 30,
                       padding: "0 12px",
                       borderRadius: 999,
-                      background: "#FAFAF8",
-                      border: "1px solid #E8E8E4",
+                      background: "var(--sf-bg)",
+                      border: "1px solid var(--sf-line)",
                       fontSize: 11.5,
                       fontWeight: 600,
-                      color: "#1A1A1A",
+                      color: "var(--sf-ink)",
                       display: "inline-flex",
                       alignItems: "center",
                       gap: 4,
@@ -602,7 +603,7 @@ export default async function StorefrontHomePage({
                     Add{" "}
                     <span
                       style={{
-                        color: "#E85D04",
+                        color: "var(--sf-accent)",
                         fontFamily: "var(--font-mono)",
                         fontWeight: 700,
                       }}
@@ -630,7 +631,7 @@ export default async function StorefrontHomePage({
                         fontSize: 13.5,
                         lineHeight: 1.35,
                         fontWeight: 500,
-                        color: "#1A1A1A",
+                        color: "var(--sf-ink)",
                         display: "-webkit-box",
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: "vertical",
@@ -652,7 +653,7 @@ export default async function StorefrontHomePage({
                           fontFamily: "var(--font-mono)",
                           fontSize: 15,
                           fontWeight: 700,
-                          color: "#1A1A1A",
+                          color: "var(--sf-ink)",
                         }}
                       >
                         {price !== null ? formatZAR(price) : "—"}
@@ -663,7 +664,7 @@ export default async function StorefrontHomePage({
                           alignItems: "center",
                           gap: 4,
                           fontSize: 11,
-                          color: "#5A8E4A",
+                          color: "var(--sf-success)",
                         }}
                       >
                         <span
@@ -671,7 +672,7 @@ export default async function StorefrontHomePage({
                             width: 6,
                             height: 6,
                             borderRadius: "50%",
-                            background: "#5A8E4A",
+                            background: "var(--sf-success)",
                             display: "inline-block",
                           }}
                         />
@@ -690,17 +691,17 @@ export default async function StorefrontHomePage({
             style={{
               textAlign: "center",
               padding: "60px 24px",
-              background: "#F5F4F0",
+              background: "var(--sf-shelf)",
               borderRadius: 12,
-              color: "#7A7468",
+              color: "var(--sf-subtle)",
             }}
           >
-            <div style={{ fontSize: 16, fontWeight: 600, color: "#5A554B", marginBottom: 8 }}>
+            <div style={{ fontSize: 16, fontWeight: 600, color: "var(--sf-muted)", marginBottom: 8 }}>
               No featured products yet
             </div>
             <Link
               href={`/${slug}/products`}
-              style={{ color: "#E85D04", fontWeight: 600, textDecoration: "none" }}
+              style={{ color: "var(--sf-accent)", fontWeight: 600, textDecoration: "none" }}
             >
               Browse all products →
             </Link>
@@ -711,9 +712,9 @@ export default async function StorefrontHomePage({
       {/* Trust strip */}
       <div
         style={{
-          borderTop: "1px solid #E8E8E4",
-          borderBottom: "1px solid #E8E8E4",
-          background: "#FFFFFF",
+          borderTop: "1px solid var(--sf-line)",
+          borderBottom: "1px solid var(--sf-line)",
+          background: "var(--sf-surface)",
           padding: "20px 32px",
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
@@ -746,12 +747,12 @@ export default async function StorefrontHomePage({
               style={{
                 width: 36,
                 height: 36,
-                background: "#FFE4CC",
+                background: "var(--sf-accent-soft)",
                 borderRadius: 8,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#E85D04",
+                color: "var(--sf-accent)",
                 flexShrink: 0,
               }}
             >
@@ -762,13 +763,13 @@ export default async function StorefrontHomePage({
                 style={{
                   fontSize: 13,
                   fontWeight: 600,
-                  color: "#1A1A1A",
+                  color: "var(--sf-ink)",
                   marginBottom: 2,
                 }}
               >
                 {item.title}
               </div>
-              <div style={{ fontSize: 12, color: "#7A7468" }}>{item.sub}</div>
+              <div style={{ fontSize: 12, color: "var(--sf-subtle)" }}>{item.sub}</div>
             </div>
           </div>
         ))}

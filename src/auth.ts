@@ -19,7 +19,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   cookies: {
     sessionToken: {
       name: "ecom.session-token",
-      options: { httpOnly: true, sameSite: "lax", path: "/", secure: false },
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: process.env.NODE_ENV === "production" },
     },
   },
   providers: [
