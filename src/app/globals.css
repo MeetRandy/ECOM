@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ── Veld design tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --surface-3: #f4f4f5;
+  --hover: #f7f7f8;
+  --border: #ececec;
+  --border-strong: #d4d4d4;
+
+  --ink: #0a0a0a;
+  --ink-2: #404040;
+  --ink-3: #737373;
+  --ink-4: #a3a3a3;
+  --ink-inv: #ffffff;
+
+  --accent: oklch(0.78 0.13 80);
+  --accent-soft: oklch(0.96 0.05 85);
+  --accent-ink: oklch(0.42 0.1 70);
+
+  --success: oklch(0.6 0.12 155);
+  --success-soft: oklch(0.95 0.04 155);
+  --danger: oklch(0.55 0.18 25);
+  --danger-soft: oklch(0.97 0.03 25);
+
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 8px;
+
+  --shadow-sm: 0 1px 0 rgba(0,0,0,0.02);
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+  --shadow-pop: 0 4px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Legacy Tailwind compat */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0c0d;
+    --surface: #131314;
+    --surface-2: #18181a;
+    --surface-3: #1f1f22;
+    --hover: #1a1a1c;
+    --border: #232326;
+    --border-strong: #2e2e32;
+
+    --ink: #fafafa;
+    --ink-2: #d4d4d4;
+    --ink-3: #a3a3a3;
+    --ink-4: #6b6b6b;
+    --ink-inv: #0a0a0a;
+
+    --accent: oklch(0.82 0.14 82);
+    --accent-soft: oklch(0.32 0.05 80);
+    --accent-ink: oklch(0.85 0.14 82);
+
+    --success: oklch(0.7 0.13 155);
+    --success-soft: oklch(0.28 0.05 155);
+    --danger: oklch(0.7 0.16 25);
+    --danger-soft: oklch(0.3 0.06 25);
+
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+    --shadow-pop: 0 8px 28px rgba(0,0,0,0.5);
+
+    --background: #0c0c0d;
+    --foreground: #fafafa;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* ── Global base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; color: inherit; }
+input:focus, textarea:focus, select:focus { outline: none; }
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+.v-mono { font-family: var(--font-mono); }
+.v-tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+.v-eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+/* Pill / badge */
+.v-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 22px; padding: 0 8px;
+  border-radius: 999px;
+  font-size: 11px; font-weight: 500;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  border: 1px solid var(--border);
+}
+.v-pill-amber { background: var(--accent-soft); color: var(--accent-ink); border-color: transparent; }
+.v-pill-green { background: var(--success-soft); color: var(--success); border-color: transparent; }
+.v-pill-red   { background: var(--danger-soft);  color: var(--danger);  border-color: transparent; }
+.v-pill-blue  { background: oklch(0.96 0.04 240); color: oklch(0.45 0.1 240); border-color: transparent; }
+
+.v-dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; display: inline-block; }
+
+/* Scrollbar */
+.v-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.v-scroll::-webkit-scrollbar-track { background: transparent; }
+.v-scroll::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; border: 2px solid var(--bg); }
+.v-scroll::-webkit-scrollbar-thumb:hover { background: var(--ink-4); }
+
+/* Buttons */
+.v-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 30px; padding: 0 11px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 12.5px; font-weight: 500;
+  transition: background .12s, border-color .12s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.v-btn:hover { background: var(--hover); }
+.v-btn-primary { background: var(--ink); color: var(--ink-inv); border-color: var(--ink); }
+.v-btn-primary:hover { opacity: 0.88; }
+.v-btn-ghost { border-color: transparent; background: transparent; }
+.v-btn-ghost:hover { background: var(--hover); }
+.v-btn-sm { height: 26px; padding: 0 8px; font-size: 12px; }
+.v-btn-lg { height: 44px; padding: 0 16px; font-size: 14px; font-weight: 600; }
+
+/* Input */
+.v-input {
+  height: 30px; padding: 0 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  width: 100%;
+}
+.v-input:focus { border-color: var(--ink); }
+
+/* Textarea variant */
+.v-textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  width: 100%;
+  resize: vertical;
+  min-height: 80px;
+}
+.v-textarea:focus { border-color: var(--ink); }
+
+/* Select */
+.v-select {
+  height: 30px; padding: 0 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  width: 100%;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px;
+  cursor: pointer;
+}
+.v-select:focus { border-color: var(--ink); }
+
+/* Card */
+.v-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+/* Form label */
+.v-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+}
+
+/* Storefront hover states (used in server components instead of onMouseEnter) */
+.sf-prod-card { transition: box-shadow .15s, transform .15s; }
+.sf-prod-card:hover { box-shadow: var(--shadow-pop); transform: translateY(-1px); }
+.sf-cat-link  { transition: border-color .12s, background .12s; }
+.sf-cat-link:hover  { border-color: var(--border-strong) !important; background: var(--hover) !important; }
+
+/* Admin table row hover */
+.v-tr:hover { background: var(--hover); }
+
+/* Admin nav item hover */
+.v-nav-item:hover { background: var(--hover) !important; }
+
+/* ── Vorna Valley Storefront tokens ──────────────────────────────────── */
+:root {
+  --vv-amber:      #E85D04;
+  --vv-amberSoft:  #FFE4CC;
+  --vv-amberWash:  #FFF1E0;
+  --vv-amberDeep:  #FFD9B8;
+  --vv-bg:         #FAFAF8;
+  --vv-surface:    #FFFFFF;
+  --vv-ink:        #1A1A1A;
+  --vv-ink2:       #3A352D;
+  --vv-muted:      #5A554B;
+  --vv-subtle:     #7A7468;
+  --vv-line:       #E8E8E4;
+  --vv-line2:      #ECEAE3;
+  --vv-shelfTan:   #F5F4F0;
+  --vv-success:    #5A8E4A;
+  --vv-display:    var(--font-display, var(--font-sans));
+}
+
+.vv-card-hover { transition: box-shadow 150ms cubic-bezier(.2,.7,.3,1), transform 150ms cubic-bezier(.2,.7,.3,1); }
+.vv-card-hover:hover { box-shadow: 0 6px 18px rgba(20,15,5,.06); transform: translateY(-2px); }
